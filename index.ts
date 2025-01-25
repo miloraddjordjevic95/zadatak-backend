@@ -3,8 +3,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const registerRoute = require("./routes/register");
-const loginRoute = require("./routes/login");
+const registerRoute = require("./src/routes/register");
+const loginRoute = require("./src/routes/login");
 
 dotenv.config();
 mongoose.connect(process.env.MONGODB_URI!);
