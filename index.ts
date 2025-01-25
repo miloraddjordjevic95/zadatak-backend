@@ -15,7 +15,7 @@ const PORT = process.env.PORT! || 3001;
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://zadatak-frontend.vercel.app"],
+    origin: ["*"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
   }),
