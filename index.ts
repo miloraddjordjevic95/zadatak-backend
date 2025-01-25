@@ -13,7 +13,13 @@ const app = express();
 const PORT = process.env.PORT! || 3001;
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["*"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  }),
+);
 app.use("/register", registerRoute);
 app.use("/login", loginRoute);
 
