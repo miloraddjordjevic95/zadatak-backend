@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -16,6 +16,10 @@ app.use(express.json());
 app.use(cors());
 app.use("/register", registerRoute);
 app.use("/login", loginRoute);
+
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).send("Server is running and ready to handle requests!");
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
