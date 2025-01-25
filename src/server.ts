@@ -7,10 +7,10 @@ const registerRoute = require("./routes/register");
 const loginRoute = require("./routes/login");
 
 dotenv.config();
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI!);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT! || 3001;
 
 app.use(express.json());
 app.use(cors());
